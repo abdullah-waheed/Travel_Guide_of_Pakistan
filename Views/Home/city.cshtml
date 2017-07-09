@@ -1,0 +1,98 @@
+﻿@model List<TravelGuide.Models.Place>
+
+
+@{
+    TravelGuide.Models.City city = ViewBag.city;
+}
+
+@{
+    ViewBag.Title = city.Name;
+}
+
+
+@{
+    Layout = "~/Views/Shared/GeneralLayout.cshtml";
+}
+
+     
+<div class="container-fluid">
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <center><h1>@city.Name</h1></center>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <center><img src="@city.Image"/></center>
+        </div>
+    
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+            <p>@city.Description</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+            @*<div class="map">
+					<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="@city.Map&amp;output=embed"></iframe><br><small><a href="@city.Map" style="color:#666;text-align:left;font-size:12px"></a></small>
+			</div>*@
+            <h1>yahan google map ana hai</h1>
+            
+			
+			
+        </div>
+    </div>
+    
+    <br/>
+    <hr />
+    <center><h1>PLACES</h1></center>
+
+    <br/>
+     @{
+        int row=1;
+        for(int i=0;i<Model.Count;i+=2)
+        {
+            if(i+1 != Model.Count){
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <a href="~/Home/Place/@Model.ElementAt(i).Place_Id" target="_self" class="address">
+                            <center><h3>@Model.ElementAt(i).Name</h3></center>
+                            <br/>
+                            <img src="@Model.ElementAt(i).Image" width="600px" height="400px"/>
+                            @*<p>@Model.ElementAt(i).Description</p>*@
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <a href="~/Home/Place/@Model.ElementAt(i+1).Place_Id" target="_self" class="address">
+                            <center><h3>@Model.ElementAt(i+1).Name</h3></center>
+                            <br/>
+                            <img src="@Model.ElementAt(i+1).Image" width="600px" height="400px"/>
+                            @*<p>@Model.ElementAt(i+1).Description</p>*@
+                        </a>
+                    </div>
+                    
+                </div>    
+                <br/><br/>
+            }
+            else{
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <a href="~/Home/Place/@Model.ElementAt(i).Place_Id" target="_self" class="address">
+                            <center><h3>@Model.ElementAt(i).Name</h3></center>
+                            <br/>
+                            <img src="@Model.ElementAt(i).Image" width="600px" height="400px"/>
+                            @*<p>@Model.ElementAt(i).Description</p>*@
+                        </a>    
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <br/><br/>
+            }
+            
+        }
+    }                   
+</div>
+	 

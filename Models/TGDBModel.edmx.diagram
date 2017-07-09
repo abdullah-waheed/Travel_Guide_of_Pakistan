@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65f34bb2b20943dba9ba6a16d7115b35" Name="Diagram1">
+        <EntityTypeShape EntityType="TravelGuideDBModel.Admin" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelGuideDBModel.Category" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelGuideDBModel.City" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelGuideDBModel.Image" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelGuideDBModel.Place_Img" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelGuideDBModel.Place" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="TravelGuideDBModel.FK_CITY_To_CATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelGuideDBModel.FK_PLACE_To_CitY" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelGuideDBModel.FK_PLACE_IMG_To_IMAGES" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelGuideDBModel.FK_PLACE_IMG_To_PLACE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TravelGuideDBModel.Slider" Width="1.5" PointX="0.93700323856296164" PointY="9.1137836617947485" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

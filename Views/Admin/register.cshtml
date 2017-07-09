@@ -1,0 +1,49 @@
+﻿@model TravelGuide.Models.Admin
+@{
+    ViewBag.Title = "Register Admin";
+    string[] style = new string[3];
+    style[0] = "/css/forms_css/demo.css";
+    style[1] = "/css/forms_css/style3.css";
+    style[2] = "/css/forms_css/animate-custom.css";
+    ViewBag.style = style;
+    Layout = "~/Views/Shared/GeneralLayout.cshtml";
+    
+}
+@*<header>
+    <a href="/"><h1>Travel Guide of <span>Pakistan</span></h1></a>
+</header>*@
+<section>				
+    <div id="container_demo" >
+        <div id="wrapper">
+            <div id="register" class="animate form">
+                @using (Html.BeginForm()) {
+                    @Html.HiddenFor(model => model.Admin_Id)
+                    <h1> Registration </h1> 
+                    <p> 
+                        <label for="namesignup" class="name" data-icon="u">Full Name</label>
+                        @Html.TextBoxFor(model => model.Name, new { size=30 })
+                    </p>
+                    <p> 
+                        <label for="usernamesignup" class="uname" data-icon="u">UserName*</label>
+                        @Html.TextBoxFor(model => model.Uname, new { size=30 })
+                    </p>
+                    <p> 
+                        <label for="emailsignup" class="youmail" data-icon="e" >Email* </label>
+                        @Html.TextBoxFor(model => model.Email, new { size=30 })
+                    </p>
+                    <p> 
+                        <label for="passwordsignup" class="youpasswd" data-icon="p">Password* </label>
+                        @Html.PasswordFor(model => model.Password, new { size=30 })
+                    </p>
+                    
+                    <p class="signin button"> 
+						<input type="submit" value="Register"/> 
+					</p>
+                    
+                }
+            </div>
+						
+        </div>
+    </div>  
+</section>
+       

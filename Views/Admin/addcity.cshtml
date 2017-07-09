@@ -1,0 +1,131 @@
+﻿@model List<TravelGuide.Models.Category>
+@{
+    ViewBag.Title = "Add Place";
+    Layout = "~/Views/Shared/GeneralLayout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        <form action="addcity" method = 'post' enctype="multipart/form-data">
+            <br />
+            <fieldset>
+        
+	            <legend>CITY DETAIL</legend>
+	            <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <label>Select Province</label>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <select name="province" id="countrySelector">
+                            <option value="0">-Select Province-</option>
+                            @{
+                                foreach (var prov in Model)
+                                {
+                                    <option value="@prov.Cat_Id">@prov.Name</option>
+                                }
+                            }
+                        </select>
+	                </div>
+                </div>
+                <br/>
+	            <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+		                <label>Enter Name of City</label>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <input type="text" name="pname" size="40" required />
+                    </div>
+	            </div>
+	            <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label>Description</label>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <textarea name="desc" cols="40" rows="5" required></textarea>
+                    </div>
+	            </div>
+	            <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+		                <label>Map <span style="color:red;font-size:15px;"> (Enter the complete name of place)</span></label>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <input type="text" name="map" size="40" required />
+                    </div>
+	            </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+		                <label>Add Image City</label>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <input type="file" name="files" id="fileToUpload" onchange="dispImg" required>
+                    </div>
+	            </div>
+	            <br/>
+        
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                    <input type="submit" value="submit">
+                    </div>
+                </div>
+                <br />
+            </fieldset>
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" >
+            <img id="plimg" src="#"/>
+        </div>
+    </div>
+</div>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    //$(document).ready(function ()
+    //{
+    //    $("#fileToUpload").change(function ()
+    //    {
+    //        var imgName = $("#fileToUpload").val();
+                 
+    //        $("#plimg").html("<center><img src="+imgName+" style='margin-top:30%;'/></center>");
+    //             //$.getJSON("/home/GetCities?id=" + countryId, function (data) {
+    //             //    $("#citySelctor").append('<option>-Select City-</option>');
+    //             //    $.each(data, function (i, item) {
+    //             //        $("#citySelctor").append('<option value=' + item.Id + '>' + item.Name + '</option>');
+    //             //        //alert('Id = ' + item.Id + " Name = " + item.Name);
+    //             //    });
+
+    //             //});
+    //    });
+    // });
+    function dispImg(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#plimg')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

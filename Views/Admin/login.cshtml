@@ -1,0 +1,45 @@
+﻿@model TravelGuide.Models.Admin
+@{
+    ViewBag.Title = "Login";
+    string[] style = new string[3];
+    style[0] = "/css/forms_css/demo.css";
+    style[1] = "/css/forms_css/style.css";
+    style[2] = "/css/forms_css/animate-custom.css";
+    ViewBag.style = style;
+    Layout = "~/Views/Shared/GeneralLayout.cshtml";
+   
+}
+@*<header>
+    <a href="/"><h1>Travel Guide of <span>Pakistan</span></h1></a>
+</header>*@
+<section>
+    
+    <div id="container_demo" >
+        <div id="wrapper">
+            <div id="login" class="animate form">
+                <form action='checkLogin' method = 'post'>
+                    <h1>Log in</h1>
+                    <p> 
+                        <label for="uname" class="uname" data-icon="u" ><b>Username</b></label>
+                        <input id="username" name="uname" required="required" type="text" placeholder="Enter Username"/>
+                    </p>
+                    <p> 
+                        <label for="psw" class="youpasswd" data-icon="p"><b>Password</b></label>
+                        <input id="password" name="psw" required="required" type="password" placeholder="Enter Password" /> 
+                    </p>
+                    <p class="keeplogin"> 
+						<input type="checkbox" name="check" id="loginkeeping" value="notNull" /> 
+						<label for="loginkeeping">Remeber me</label>
+					</p>
+                    <p class="login button"> 
+                        <input type="submit" value="Login" /> 
+					</p>
+                    @*<p class="change_link">
+						Not a member yet ?
+						<a href="#toregister" class="to_register">Join us</a>
+					</p>*@
+                </form>
+            </div>			
+        </div>
+    </div>  
+</section>

@@ -1,0 +1,95 @@
+﻿@model List<TravelGuide.Models.City>
+
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+@{
+    TravelGuide.Models.Category prov = ViewBag.province;
+}
+
+@{
+    ViewBag.Title = prov.Name;
+}
+
+
+@{
+    Layout = "~/Views/Shared/GeneralLayout.cshtml";
+}
+
+     
+<div class="container-fluid">
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <center><h1>@prov.Name</h1></center>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <center><img src="@prov.Image"/></center>
+        </div>
+    
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <center><p>@prov.Description</p></center>
+        </div>
+    </div>
+    
+    <br/>
+    <hr />
+    <center><h1>CITIES</h1></center>
+
+    <br/>
+     @{
+        int row=1;
+        for(int i=0;i<Model.Count;i+=2)
+        {
+            if(i+1 != Model.Count){
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <a href="~/Home/City/@Model.ElementAt(i).City_Id" target="_self" class="address">
+                            <center><h3>@Model.ElementAt(i).Name</h3></center>
+                            <br/>
+                            <img src="@Model.ElementAt(i).Image" width="600px" height="400px"/>
+                            @*<p>@Model.ElementAt(i).Description</p>*@
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <a href="~/Home/City/@Model.ElementAt(i+1).City_Id" target="_self" class="address">
+                            <center><h3>@Model.ElementAt(i+1).Name</h3></center>
+                            <br/>
+                            <img src="@Model.ElementAt(i+1).Image" width="600px" height="400px"/>
+                            @*<p>@Model.ElementAt(i+1).Description</p>*@
+                        </a>
+                    </div>
+                    
+                </div>    
+                <br/><br/>
+            }
+            else{
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <a href="~/Home/City/@Model.ElementAt(i).City_Id" target="_self" class="address">
+                            <center><h3>@Model.ElementAt(i).Name</h3></center>
+                            <br/>
+                            <img src="@Model.ElementAt(i).Image" width="600px" height="400px"/>
+                            @*<p>@Model.ElementAt(i).Description</p>*@
+                        </a>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <br/><br/>
+            }
+            
+        }
+    }                   
+</div>
+	 
