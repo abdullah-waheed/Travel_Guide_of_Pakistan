@@ -1,0 +1,73 @@
+﻿@model List<TravelGuide.Models.Category>
+
+
+@{
+    ViewBag.Title = "Manage Provinces";
+    string[] style = new string[3];
+    style[0] = "/Content/css/hovereffect.css";
+    ViewBag.style = style;
+    Layout = "~/Views/Shared/GeneralLayout.cshtml";
+}
+
+     
+<div class="container-fluid">
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <center><h1>Manage Provinces</h1></center>
+        </div>
+    </div>
+    
+    <hr />
+    <br/>
+     @{
+        int row=1;
+        for(int i=0;i<Model.Count;i+=2)
+        {
+            if(i+1 != Model.Count){
+                <div class="row" style="background:#d9d9d9;padding-top:20px;padding-bottom:20px;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <center><h2>@Model.ElementAt(i).Name</h2></center>
+                        <br/>
+                        <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
+                            <img class="image" src="/Content/images/@Model.ElementAt(i).Image" width="600px" height="400px"/>
+                            <div class="overlay"></div>
+                            <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i).Cat_Id"> EDIT </a></div>
+                            <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i).Cat_Id"> DELETE </a></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <center><h2>@Model.ElementAt(i+1).Name</h2></center>
+                        <br/>
+                        <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
+                            <img class="image" src="/Content/images/@Model.ElementAt(i+1).Image" width="600px" height="400px"/>
+                            <div class="overlay"></div>
+                            <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i+1).Cat_Id"> EDIT </a></div>
+                            <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i+1).Cat_Id"> DELETE </a></div>
+                        </div>
+                    </div>
+                    
+                </div>    
+                <br/><br/>
+            }
+            else{
+                <div class="row"  style="background:#d9d9d9;padding-top:20px;padding-bottom:20px;">
+                    <div class="col-lg-3"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <center><h2>@Model.ElementAt(i).Name</h2></center>
+                        <br/>
+                        <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
+                            <img class="image" src="/Content/images/@Model.ElementAt(i).Image" width="600px" height="400px"/>
+                            <div class="overlay"></div>
+                            <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i).Cat_Id"> EDIT </a></div>
+                            <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i).Cat_Id"> DELETE </a></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <br/><br/>
+            }
+            
+        }
+    }                   
+</div>

@@ -4,7 +4,7 @@
 @{
     ViewBag.Title = "Manage Cities";
     string[] style = new string[3];
-    style[0] = "/css/hovereffect.css";
+    style[0] = "/Content/css/hovereffect.css";
     ViewBag.style = style;
     Layout = "~/Views/Shared/GeneralLayout.cshtml";
 }
@@ -30,7 +30,7 @@
                         <center><h2>@Model.ElementAt(i).Name</h2></center>
                         <br/>
                         <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
-                            <img class="image" src="@Model.ElementAt(i).Image" width="600px" height="400px"/>
+                            <img class="image" src="/Content/images/@Model.ElementAt(i).Image" width="600px" height="400px"/>
                             <div class="overlay"></div>
                             <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i).City_Id"> EDIT </a></div>
                             <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i).City_Id"> DELETE </a></div>
@@ -40,7 +40,7 @@
                         <center><h2>@Model.ElementAt(i+1).Name</h2></center>
                         <br/>
                         <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
-                            <img class="image" src="@Model.ElementAt(i+1).Image" width="600px" height="400px"/>
+                            <img class="image" src="/Content/images/@Model.ElementAt(i+1).Image" width="600px" height="400px"/>
                             <div class="overlay"></div>
                             <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i+1).City_Id"> EDIT </a></div>
                             <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i+1).City_Id"> DELETE </a></div>
@@ -57,7 +57,7 @@
                         <center><h2>@Model.ElementAt(i).Name</h2></center>
                         <br/>
                         <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
-                            <img class="image" src="@Model.ElementAt(i).Image" width="600px" height="400px"/>
+                            <img class="image" src="/Content/images/@Model.ElementAt(i).Image" width="600px" height="400px"/>
                             <div class="overlay"></div>
                             <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i).City_Id"> EDIT </a></div>
                             <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i).City_Id"> DELETE </a></div>

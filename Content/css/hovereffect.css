@@ -1,0 +1,67 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 195%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.container:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+.image {
+  display: block;
+}
+
+.editbutton {
+  position: absolute;
+  margin-left:50%;
+  left:0;
+  top: 180px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.editbutton a {
+  width: 200px;
+  padding: 12px 48px;
+  background: #99b3ff;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+}
+
+.container:hover .editbutton {
+  opacity: 1;
+}
+
+.delbutton {
+  position: absolute;
+  margin-left:100%;
+  
+  left:0;
+  top: 180px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.delbutton a {
+  width: 200px;
+  padding: 12px 48px;
+  background:#ff8080;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+}
+
+.container:hover .delbutton {
+  opacity: 1;
+}

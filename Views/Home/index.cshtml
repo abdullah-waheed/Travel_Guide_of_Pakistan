@@ -4,18 +4,18 @@
 <html>
 <head>
 <title>Travel Guide of Pakistan | Home</title>
-<link href="~/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="~/css/style.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="~/js/jquery.min.js"></script>
-<!--<script src="js/jquery.easydropdown.js"></script>-->
+<script src="~/Scripts/jquery.min.js"></script>
+<!--<script src="Scripts/jquery.easydropdown.js"></script>-->
 <!--start slider -->
-<link rel="stylesheet" href="css/fwslider.css" media="all">
-<script src="~/js/jquery-ui.min.js"></script>
-<script src="~/js/fwslider.js"></script>
+<link rel="stylesheet" href="Content/css/fwslider.css" media="all">
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/fwslider.js"></script>
 <!--end slider -->
 <script type="text/javascript">
         $(document).ready(function() {
@@ -56,10 +56,10 @@
 			  <div class="col-md-12">
 				 <div class="header-left">
 					 <div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=""/></a>
+						<a href="index.html"><img src="Content/images/logo.png" alt=""/></a>
 					 </div>
 					 <div class="menu">
-						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+						  <a class="toggleMenu" href="#"><img src="Content/images/nav.png" alt="" /></a>
 						    <ul class="nav" id="nav">
 						    	<li><a href="/">Home</a></li>
 						    	<li><a href="~/Home/Categories">Categories</a></li>
@@ -69,7 +69,7 @@
 								<li><a href="contact.cshtml">Contact</a></li>								*@
 								<div class="clear"></div>
 							</ul>
-							<script type="text/javascript" src="js/responsive-nav.js"></script>
+							<script type="text/javascript" src="/Scripts/responsive-nav.js"></script>
 				    </div>							
 	    		    <div class="clear"></div>
 	    	    </div>
@@ -85,8 +85,8 @@
 							</div>
 						</div>
 						<!----search-scripts---->
-						<script src="js/classie.js"></script>
-						<script src="js/uisearch.js"></script>
+						<script src="/Scripts/classie.js"></script>
+						<script src="/Scripts/uisearch.js"></script>
 						<script>
 							new UISearch( document.getElementById( 'sb-search' ) );
 						</script>
@@ -123,7 +123,7 @@
          <div class="slider_container">
             <div class="slide"> 
                 <!-- Slide image -->
-               <img src="images/Faisal Mosque.jpg" class="img-responsive" alt=""/>
+               <img src="/Content/images/Faisal Mosque.jpg" class="img-responsive" alt=""/>
                 <!-- /Slide image -->
                 <!-- Texts container -->
                 <div class="slide_content">
@@ -138,7 +138,7 @@
             </div>
             <!-- /Duplicate to create more slides -->
             <div class="slide">
-               <img src="images/12.jpg" class="img-responsive" alt=""/>
+               <img src="/Content/images/12.jpg" class="img-responsive" alt=""/>
                 <div class="slide_content">
                     <div class="slide_content_wrap">
                         <h1 class="title">Looking For Popular<br>Places?</h1>
@@ -178,11 +178,11 @@
                 
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <img src="images/pakistan.jpg" width="100%"/>
+                    <img src="/Content/images/pakistan.jpg" width="100%"/>
                 </div>
 		
             </div>
-            @*<div class="content-bottom" style="background: url(images/home1.jpg)no-repeat center top;width:auto">
+            @*<div class="content-bottom" style="background: url(Content/images/home1.jpg)no-repeat center top;width:auto">
 	            <div class="container">
 		            <div class="row content_bottom-text">
 			            <div class="col-md-7">
@@ -203,7 +203,7 @@
                             <a href="~/Home/Place/@Model.ElementAt(i).Place_Id" target="_self" class="address">
                                 <center><h3>@Model.ElementAt(i).Name</h3></center>
                                 <br/>
-                                <img src="@Model.ElementAt(i).Image" width="100%" height="auto"/>
+                                <img src="/Content/images/@Model.ElementAt(i).Image" width="100%" height="auto"/>
                             </a>
                         </div>
                         if(i+1!=Model.Count)
@@ -217,7 +217,7 @@
                 <br/>
             </div>
             <br/>
-            <div class="row" style="background: url(images/murree.jpg)no-repeat center top;height:auto;" >
+            <div class="row" style="background: url(Content/images/murree.jpg)no-repeat center top;height:auto;" >
                 <br/>
                 <div class="row">
                     <center><h2>WANT SOME TRAVEL GUIDE?</h2></center>
