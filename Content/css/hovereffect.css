@@ -65,3 +65,24 @@
 .container:hover .delbutton {
   opacity: 1;
 }
+
+.crossbutton {
+  position: absolute;
+  margin-left: 155%;
+  left: 0;
+  font-size: 50px;
+  top: 5px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.container:hover .crossbutton {
+  opacity: 1;
+}
+.crossbutton a {
+  padding: 12px 48px;
+  text-align: center;
+  text-decoration:none;
+  z-index: 1;
+}

@@ -1,11 +1,12 @@
 ﻿@model List<TravelGuide.Models.Category>
 @{
-    ViewBag.Title = "Add Place";
+    ViewBag.Title = "Add City";
     Layout = "~/Views/Shared/GeneralLayout.cshtml";
 }
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-1"></div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
         <form action="addcity" method = 'post' enctype="multipart/form-data">
             <br />
             <fieldset>
@@ -32,7 +33,7 @@
                 </div>
                 <br/>
 	            <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
 		                <label>Enter Name of City</label>
                     </div>
                 </div>
@@ -56,7 +57,7 @@
 	            </div>
 	            <br/>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 		                <label>Map <span style="color:red;font-size:15px;"> (Enter the complete name of place)</span></label>
                     </div>
                 </div>
@@ -68,7 +69,7 @@
 	            </div>
                 <br/>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 		                <label>Add Image City</label>
                     </div>
                 </div>

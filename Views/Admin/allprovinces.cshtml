@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "Manage Provinces";
-    string[] style = new string[3];
+    string[] style = new string[1];
     style[0] = "/Content/css/hovereffect.css";
     ViewBag.style = style;
     Layout = "~/Views/Shared/GeneralLayout.cshtml";
@@ -32,8 +32,8 @@
                         <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
                             <img class="image" src="/Content/images/@Model.ElementAt(i).Image" width="600px" height="400px"/>
                             <div class="overlay"></div>
-                            <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i).Cat_Id"> EDIT </a></div>
-                            <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i).Cat_Id"> DELETE </a></div>
+                            <div class="editbutton"><a href="/Admin/Editcategory/@Model.ElementAt(i).Cat_Id"> EDIT </a></div>
+                            <div class="delbutton"><a href="/Admin/deletecategory/@Model.ElementAt(i).Cat_Id"> DELETE </a></div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
@@ -42,8 +42,8 @@
                         <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
                             <img class="image" src="/Content/images/@Model.ElementAt(i+1).Image" width="600px" height="400px"/>
                             <div class="overlay"></div>
-                            <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i+1).Cat_Id"> EDIT </a></div>
-                            <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i+1).Cat_Id"> DELETE </a></div>
+                            <div class="editbutton"><a href="/Admin/Editcategory/@Model.ElementAt(i+1).Cat_Id"> EDIT </a></div>
+                            <div class="delbutton"><a href="/Admin/deletecategory/@Model.ElementAt(i+1).Cat_Id"> DELETE </a></div>
                         </div>
                     </div>
                     
@@ -59,8 +59,8 @@
                         <div class="container" style="position: relative;width: 50%;margin-left: inherit;">
                             <img class="image" src="/Content/images/@Model.ElementAt(i).Image" width="600px" height="400px"/>
                             <div class="overlay"></div>
-                            <div class="editbutton"><a href="/Admin/editcity/@Model.ElementAt(i).Cat_Id"> EDIT </a></div>
-                            <div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i).Cat_Id"> DELETE </a></div>
+                            <div class="editbutton"><a href="/Admin/editcategory/@Model.ElementAt(i).Cat_Id"> EDIT </a></div>
+                            <div class="delbutton"><a href="/Admin/deletecategory/@Model.ElementAt(i).Cat_Id"> DELETE </a></div>
                         </div>
                     </div>
                     <div class="col-lg-3"></div>

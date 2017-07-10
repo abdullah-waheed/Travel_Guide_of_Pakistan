@@ -1,0 +1,94 @@
+﻿@model TravelGuide.Models.Category
+@{
+    ViewBag.Title = "Edit Category";
+    string[] style = new string[1];
+    style[0] = "/Content/css/hovereffect.css";
+    ViewBag.style = style;
+    Layout = "~/Views/Shared/GeneralLayout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <br />
+        <p style="color:red">If you want to remove an image, you shold Press <strong>'X'</strong> on the image</p>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-1"></div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+        <form action="editCategory" method = 'post' enctype="multipart/form-data">
+            <br />
+            <input type="hidden" name="cat_id" value="@Model.Cat_Id" />
+            <fieldset>
+	            <legend>EDIT PROIVINCE DETAIL</legend>
+	            <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+		                <label>Change Name</label>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <input type="text" name="pname" size="40" value="@Model.Name" required />
+                    </div>
+	            </div>
+	            <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+                        <label>Description</label>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <textarea name="desc" cols="40" rows="5" required>@Model.Description</textarea>
+                    </div>
+	            </div>
+	            <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+		                <label>Change image of the Province</label>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		                <input type="file" name="files" id="fileToUpload">
+                    </div>
+	            </div>
+	            <br/>
+        
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                    <input type="submit" value="UPDATE">
+                    </div>
+                </div>
+                <br />
+            </fieldset>
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+            <br />
+                <center><div class="container" style="position: relative;width: 50%;margin-left: inherit;">
+                    <img class="image" src="/Content/images/@Model.Image" width="600px" height="400px"/>
+                    <div class="overlay"></div>
+                    <div class="crossbutton" onclick="removeImgCa(@Model.Cat_Id)"><a href="javascript:void(0);"> &#10060 </a></div>
+                    @*<div class="delbutton"><a href="/Admin/deletecity/@Model.ElementAt(i).Cat_Id"> DELETE </a></div>*@
+                </div></center>
+                <br />
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#fileToUpload").change(function () {
+            var imgName = $("#fileToUpload").val();
+                 
+                 $("#plimg");
+                 //$.getJSON("/home/GetCities?id=" + countryId, function (data) {
+                 //    $("#citySelctor").append('<option>-Select City-</option>');
+                 //    $.each(data, function (i, item) {
+                 //        $("#citySelctor").append('<option value=' + item.Id + '>' + item.Name + '</option>');
+                 //        //alert('Id = ' + item.Id + " Name = " + item.Name);
+                 //    });
+
+                 //});
+             });
+         });
+</script>
