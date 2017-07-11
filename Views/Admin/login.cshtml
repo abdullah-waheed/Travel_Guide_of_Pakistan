@@ -34,12 +34,63 @@
                     <p class="login button"> 
                         <input type="submit" value="Login" /> 
 					</p>
-                    @*<p class="change_link">
-						Not a member yet ?
-						<a href="#toregister" class="to_register">Join us</a>
-					</p>*@
+                    <p class="change_link" id="forgPasswd">
+						
+						<a href="javascript:void(0)" class="to_register">Forget Password?</a>
+					</p>
                 </form>
             </div>			
         </div>
     </div>  
 </section>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="min-width: 600px;margin-left:-50px">
+            <div class="modal-header" style="background: #2b2b2b">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title" style="text-align: center; color:white"><strong>Forget Password</strong></h3>
+            </div>
+            <div class="modal-body" style="background: white ; margin-bottom: -15px">
+                <div class="container-fluid">
+                    <div class="row">
+	                    <h4 id="data"></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="background:#2b2b2b">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#forgPasswd').click(function () {
+            var uname= $('#username').val();
+
+            $.getJSON("/admin/ForgetPassword?Username=" + uname, function (data) {
+                if (data) {
+                    $('#data').html("We have sent your password on your Email");
+                    $('#myModal').modal('show');
+                }
+                else {
+                    $('#username').focus();
+                    $('#data').html("Please Enter Your Username First");
+                    $('#myModal').modal('show');
+                }
+            });
+
+        });
+        
+    });
+    function removeImgC(id) {
+        $.getJSON("/admin/RemoveCityImg?Id=" + id, function (data) {
+            if (data) {
+                $('#image').html("");
+            }
+        });
+    }
+</script>

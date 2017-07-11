@@ -1,122 +1,8 @@
 ﻿@model List<TravelGuide.Models.Place>
-
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Travel Guide of Pakistan | Home</title>
-<link href="~/Content/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="~/Content/css/style.css" rel='stylesheet' type='text/css' />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="~/Scripts/jquery.min.js"></script>
-<!--<script src="Scripts/jquery.easydropdown.js"></script>-->
-<!--start slider -->
-<link rel="stylesheet" href="Content/css/fwslider.css" media="all">
-<script src="~/Scripts/jquery-ui.min.js"></script>
-<script src="~/Scripts/fwslider.js"></script>
-<!--end slider -->
-<script type="text/javascript">
-        $(document).ready(function() {
-            $(".dropdown img.flag").addClass("flagvisibility");
-
-            $(".dropdown dt a").click(function() {
-                $(".dropdown dd ul").toggle();
-            });
-                        
-            $(".dropdown dd ul li a").click(function() {
-                var text = $(this).html();
-                $(".dropdown dt a span").html(text);
-                $(".dropdown dd ul").hide();
-                $("#result").html("Selected value is: " + getSelectedValue("sample"));
-            });
-                        
-            function getSelectedValue(id) {
-                return $("#" + id).find("dt a span.value").html();
-            }
-
-            $(document).bind('click', function(e) {
-                var $clicked = $(e.target);
-                if (! $clicked.parents().hasClass("dropdown"))
-                    $(".dropdown dd ul").hide();
-            });
-
-
-            $("#flagSwitcher").click(function() {
-                $(".dropdown img.flag").toggleClass("flagvisibility");
-            });
-        });
-     </script>
-</head>
-<body>
-	<div class="header">
-		<div class="container">
-			<div class="row">
-			  <div class="col-md-12">
-				 <div class="header-left">
-					 <div class="logo">
-						<a href="index.html"><img src="Content/images/logo.png" alt=""/></a>
-					 </div>
-					 <div class="menu">
-						  <a class="toggleMenu" href="#"><img src="Content/images/nav.png" alt="" /></a>
-						    <ul class="nav" id="nav">
-						    	<li><a href="/">Home</a></li>
-						    	<li><a href="~/Home/Categories">Categories</a></li>
-						    	<li><a href="/Home/Contact">Contact Us</a></li>
-						    	<li><a href="/Home/TravelGuide">Travel Guide</a></li>
-						    	@*<li><a href="shop.html">Company</a></li>
-								<li><a href="contact.cshtml">Contact</a></li>								*@
-								<div class="clear"></div>
-							</ul>
-							<script type="text/javascript" src="/Scripts/responsive-nav.js"></script>
-				    </div>							
-	    		    <div class="clear"></div>
-	    	    </div>
-	            <div class="header_right">
-	    		  <!-- start search-->
-				      <div class="search-box">
-							<div id="sb-search" class="sb-search">
-								<form>
-									<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-									<input class="sb-search-submit" type="submit" value="">
-									<span class="sb-icon-search"> </span>
-								</form>
-							</div>
-						</div>
-						<!----search-scripts---->
-						<script src="/Scripts/classie.js"></script>
-						<script src="/Scripts/uisearch.js"></script>
-						<script>
-							new UISearch( document.getElementById( 'sb-search' ) );
-						</script>
-						<!----//search-scripts---->
-				    @*<ul class="icon1 sub-icon1 profile_img">
-					 <li><a class="active-icon c1" href="#"> </a>
-						<ul class="sub-icon1 list">
-						  <div class="product_control_buttons">
-						  	<a href="#"><img src="images/edit.png" alt=""/></a>
-						  		<a href="#"><img src="images/close_edit.png" alt=""/></a>
-						  </div>
-						   <div class="clear"></div>
-						  <li class="list_img"><img src="images/1.jpg" alt=""/></li>
-						  <li class="list_desc"><h4><a href="#">velit esse molestie</a></h4><span class="actual">1 x
-                          $12.00</span></li>
-						  <div class="login_buttons">
-							 <div class="check_button"><a href="checkout.html">Check out</a></div>
-							 <div class="login_button"><a href="login.html">Login</a></div>
-							 <div class="clear"></div>
-						  </div>
-						  <div class="clear"></div>
-						</ul>
-					 </li>
-				   </ul>*@
-		           <div class="clear"></div>
-	       </div>
-	      </div>
-		 </div>
-	    </div>
-	</div>
+@{  
+    ViewBag.Title = "Travel Guide of Pakistan | Home";
+    Layout = "~/Views/Shared/GeneralLayout.cshtml";
+}
 	<div class="banner">
 	<!-- start slider -->
        <div id="fwslider">
@@ -167,7 +53,7 @@
                 <br/>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5" style="margin-left:35px;margin-right:10px;">
                 
                     <p>Pakistan , officially the Islamic Republic of Pakistan (Urdu: اسلامی جمہوریہ پاکستان‎), is a federal parliamentary republic in South Asia on the crossroads of Central and Western Asia. It is the sixth-most populous country with a population exceeding 201 million people. In terms of area, it is the 33rd-largest country spanning 881,913 square kilometres (340,509 square miles). Pakistan has a 1,046-kilometre (650-mile) coastline along the Arabian Sea and its Gulf of Oman in the south and is bordered by India to the east, Afghanistan to the west, Iran to the southwest, and China in the far northeast, respectively. It is separated from Tajikistan by Afghanistan's narrow Wakhan Corridor in the north, and also shares a maritime border with Oman.</p>
                     <br/>
@@ -177,7 +63,7 @@
                     <br/>
                 
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" style="margin-left:10px;">
                     <img src="/Content/images/pakistan.jpg" width="100%"/>
                 </div>
 		
@@ -192,24 +78,32 @@
 		            </div>
 	            </div>
             </div>*@
-            <br />
-            <div class="row" id="popular" style="background:lightgrey">
+            <br/>
+            @*<div class="row" style="background: url(Content/images/murree.jpg)no-repeat center bottom;height:auto;" >
+                <br/>
+                <div class="row">
+                    <center><h2>WANT OUR EXPERTISE?</h2></center>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="button" style="margin-right:40%"><a href="/Home/Contact">CONTACT US</a></div>
+                </div>
+                <br/>
+            </div>
+            <br />*@
+            <div class="row" id="popular" style="background:lightgrey;">
                 <br />
                 <center><h2>POPULAR PLACES</h2></center>
                 @{
                     for(int i=0;i<Model.Count;i++)    
                     {
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3" style="margin-left:90px;margin-bottom:30px;">
                             <a href="~/Home/Place/@Model.ElementAt(i).Place_Id" target="_self" class="address">
                                 <center><h3>@Model.ElementAt(i).Name</h3></center>
                                 <br/>
-                                <img src="/Content/images/@Model.ElementAt(i).Image" width="100%" height="auto"/>
+                                <img src="/Content/images/@Model.ElementAt(i).Image" width="300p" height="200p" />
                             </a>
                         </div>
-                        if(i+1!=Model.Count)
-                        {
-                            <div class="col-lg-1"></div>
-                        } 
                     }
                     <br/>
                 }
@@ -224,70 +118,10 @@
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="button" style="margin-right:50%;margin-left:50%"><a href="/Home/TravelGuide">TRAVEL GUIDE</a></div>
+                    <div class="button" style="margin-right:40%"><a href="/Home/TravelGuide">TRAVEL GUIDE</a></div>
                 </div>
                 <br/>
             </div>
             <br/>
         </div>
     </div>
-	<div class="footer">
-			<div class="container">
-				<div class="row">
-					@*<div class="col-md-3">
-						<ul class="footer_box">
-							<h4>Products</h4>
-							<li><a href="#">Mens</a></li>
-							<li><a href="#">Womens</a></li>
-							<li><a href="#">Youth</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<ul class="footer_box">
-							<h4>About</h4>
-							<li><a href="#">Careers and internships</a></li>
-							<li><a href="#">Sponserships</a></li>
-							<li><a href="#">team</a></li>
-							<li><a href="#">Catalog Request/Download</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<ul class="footer_box">
-							<h4>Customer Support</h4>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Shipping and Order Tracking</a></li>
-							<li><a href="#">Easy Returns</a></li>
-							<li><a href="#">Warranty</a></li>
-							<li><a href="#">Replacement Binding Parts</a></li>
-						</ul>
-					</div>*@
-					<div class="col-md-3">
-						<ul class="footer_box">
-							<h4>Newsletter</h4>
-							<div class="footer_search">
-				    		   <form>
-				    			<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
-				    			<input type="submit" value="Go">
-				    		   </form>
-					        </div>
-							<ul class="social">	
-							  <li class="facebook"><a href="#"><span> </span></a></li>
-							  <li class="twitter"><a href="#"><span> </span></a></li>
-							  <li class="instagram"><a href="#"><span> </span></a></li>	
-							  <li class="pinterest"><a href="#"><span> </span></a></li>	
-							  <li class="youtube"><a href="#"><span> </span></a></li>										  				
-						    </ul>
-		   					
-						</ul>
-					</div>
-				</div>
-				<div class="row footer_bottom">
-				    <div class="copy">
-			           <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
-		            </div>
-					  
-   				</div>
-			</div>
-		</div>
-</body>	
-</html>

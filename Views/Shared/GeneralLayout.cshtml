@@ -11,6 +11,7 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>    
     <link rel="stylesheet" href="~/Content/css/fwslider.css" media="all">
     @if(@ViewBag.style!=null)
     {
@@ -53,7 +54,7 @@
     });
      </script>
  </head>
-<body>
+<body style="background-color:#ccffcc;">
     @try
     {
         if (Session["role"].ToString().Equals("admin"))

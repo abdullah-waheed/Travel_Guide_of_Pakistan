@@ -2,5 +2,19 @@
     ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/GeneralLayout.cshtml";
 }
-
-<h2>index.cshtml</h2>
+<div class="container-fluid" style="padding:50px;">
+<h2>Welcome <strong>@Session["name"]</strong> to Travel Guide of Pakistan</h2>
+<br />
+<h3>Here are some Guidelines that might Help you to manage this site</h3>
+<br />
+<p>To ADD/EDIT/DELETE a Place/City/Province, click Places/Cities/Provinces tabs respectively.</p>
+<br />
+<p>You can Edit and Delete a Place/City/Province by hovering over that and Pressing respective Buttons. </p>
+<br />
+<p>You can upload only one image of each City and Category(Province)</p>
+<br />
+<p>You can upload many images of a Place</p>
+<br />
+<p>For Map of a Placce and City, search that location Google, then Go to menu and select 'Share or Embed Map', From this you select 'Embed Map' and then copy 'src' of Map.</p>
+<br />
+</div>
